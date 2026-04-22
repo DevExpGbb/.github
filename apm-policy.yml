@@ -1,7 +1,5 @@
 name: devexpgbb-org-policy
 version: "1.1.0"
-# Demo: enforcement flipped to block to show install-time governance teeth.
-# Restore to "warn" after the demo (see scripts/restore-policy.sh).
 enforcement: block
 
 cache:
@@ -13,8 +11,6 @@ dependencies:
     - "microsoft/*"
     - "github/*"
   deny:
-    # Pending SecOps review -- third-party Azure helpers not yet approved
-    # for org-wide use. Teams must request exception or pin a vetted fork.
     - "github/awesome-copilot/plugins/azure-cloud-development"
     - "test-blocked/*"
   require_resolution: project-wins
@@ -37,9 +33,7 @@ compilation:
   source_attribution: true
 
 manifest:
-  required_fields:
-    - version
-    - description
+  required_fields: [version, description]
   scripts: allow
   content_types:
     allow: [instructions, skill, hybrid, prompts]
