@@ -1,9 +1,9 @@
 name: devexpgbb-test-policy
 version: "1.0.0"
-enforcement: warn
+enforcement: block
 
 cache:
-  ttl: 3600
+  ttl: 60
 
 dependencies:
   allow:
@@ -12,6 +12,7 @@ dependencies:
     - "github/*"
   deny:
     - "test-blocked/*"
+    - "microsoft/apm-sample-package"
   require:
     - "DevExpGbb/required-standards"
   require_resolution: project-wins
@@ -19,8 +20,8 @@ dependencies:
 mcp:
   allow:
     - "io.github.github/*"
-    - "io.github.modelcontextprotocol/*"
-  deny: []
+  deny:
+    - "io.github.modelcontextprotocol/everything"
   transport:
     allow: [stdio, http]
   self_defined: warn
