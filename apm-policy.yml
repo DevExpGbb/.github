@@ -3,7 +3,7 @@ version: "1.0.0"
 enforcement: warn
 
 cache:
-  ttl: 60
+  ttl: 3600
 
 dependencies:
   allow:
@@ -12,14 +12,15 @@ dependencies:
     - "github/*"
   deny:
     - "test-blocked/*"
-    - "microsoft/apm-sample-package"
+  require:
+    - "DevExpGbb/required-standards"
   require_resolution: project-wins
 
 mcp:
   allow:
     - "io.github.github/*"
-  deny:
-    - "io.github.modelcontextprotocol/everything"
+    - "io.github.modelcontextprotocol/*"
+  deny: []
   transport:
     allow: [stdio, http]
   self_defined: warn
