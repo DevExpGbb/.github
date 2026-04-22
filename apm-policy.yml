@@ -13,8 +13,6 @@ dependencies:
   deny:
     - "test-blocked/*"
     - "microsoft/apm-sample-package"
-  require:
-    - "DevExpGbb/required-standards"
   require_resolution: project-wins
 
 mcp:
