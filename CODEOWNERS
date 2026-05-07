@@ -1,0 +1,14 @@
+# CODEOWNERS for DevExpGbb/.github
+#
+# The apm-policy.yml in this repo is auto-discovered by `apm install`
+# and `apm audit --ci --policy org` for every consumer in the
+# DevExpGbb organisation. It is the trust root: a change here
+# changes the rules for every repo in the org. Treat it accordingly.
+#
+# See https://microsoft.github.io/apm/enterprise/governance-guide/#12-auditing-the-auditor
+
+# Org-wide APM policy — requires explicit review.
+/apm-policy.yml  @danielmeppiel @DevExpGbb/software-gbbs
+
+# Org profile content — light-touch ownership.
+/profile/        @DevExpGbb/software-gbbs

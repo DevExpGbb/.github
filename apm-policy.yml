@@ -1,6 +1,7 @@
 name: devexpgbb-org-policy
-version: "1.2.0"
+version: "2.0.0"
 enforcement: block
+fetch_failure: warn
 
 cache:
   ttl: 3600
@@ -13,6 +14,8 @@ dependencies:
   deny:
     - "github/awesome-copilot/plugins/azure-cloud-development"
     - "test-blocked/**"
+  require:
+    - "DevExpGbb/zava-agent-config/plugins/secure-baseline"
   require_resolution: project-wins
 
 mcp:
@@ -39,5 +42,8 @@ manifest:
     allow: [instructions, skill, hybrid, prompts]
 
 unmanaged_files:
-  action: warn
-  directories: []
+  action: deny
+  directories:
+    - .github/agents
+    - .github/instructions
+    - .github/hooks
