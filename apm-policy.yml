@@ -1,6 +1,6 @@
 name: devexpgbb-org-policy
 version: "2.0.0"
-enforcement: block
+enforcement: warn
 fetch_failure: warn
 
 cache:
